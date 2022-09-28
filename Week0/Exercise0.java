@@ -5,24 +5,14 @@ public class Exercise0 {
       int size = 0;
 
       size = addCall(phoneNumbers, callDurations, size, "555-555-5555", 137);
-      size = addCall(phoneNumbers, callDurations, size, "555-555-0000", 12);
+      size = addCall(phoneNumbers, callDurations, size, "555-555-5555", 12);
       size = addCall(phoneNumbers, callDurations, size, "555-555-1234", 26);
       size = addCall(phoneNumbers, callDurations, size, "555-555-9876", 382);
 
       System.out.println("Phone numbers (initially):");
       printList(phoneNumbers, callDurations, size);
-
-      size = removeCall(phoneNumbers, callDurations, size, 1); // middle
-      size = removeCall(phoneNumbers, callDurations, size, size - 1); // last
-      size = removeCall(phoneNumbers, callDurations, size, 0); // first
-
-      System.out.println("\nPhone numbers (after):");
-      printList(phoneNumbers, callDurations, size);
-
-      size = removeCall(phoneNumbers, callDurations, size, 0);
-
-      System.out.println("\nPhone numbers (none left):");
-      printList(phoneNumbers, callDurations, size);
+      System.out.println("After");
+      totalDurations(phoneNumbers, callDurations, size);
 
       System.out.println("\nEnd of processing.");
    }
@@ -79,5 +69,23 @@ public class Exercise0 {
       size--;
 
       return size;
+   }
+   public static void totalDurations(String[] phoneNumbers, int[] callDurations, int size){
+      String[] phoneNum = new String[size];
+      int[] callLength = new int[size];
+      int totalNumbers = 0;
+
+      for(int i=0 ; i<size ; i++){
+         int pos = find(phoneNum, totalNumbers, 0, phoneNumbers[i]);
+         if(pos == -1){
+            phoneNum[totalNumbers] = phoneNumbers[i];
+            callLength[totalNumbers] = callDurations[i];
+            totalNumbers++;
+         }
+         else{
+            callLength[pos] += callDurations[i];
+         }
+      }
+      printList(phoneNum, callLength, totalNumbers);
    }
 }
