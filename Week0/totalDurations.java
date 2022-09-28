@@ -1,3 +1,14 @@
+/**
+* Name of class or program totalDurations
+*
+* COMP 1020 SECTION D01
+* INSTRUCTOR Reyhaneh
+* ASSIGNMENT Exercise 0
+* @author Shivam Sharma, 7885183
+* @version 27-09-2022
+*
+* PURPOSE: This program calculates the total duration of each call.
+*/
 public class totalDurations {
     public static void totalDurations(String[] phoneNumbers, int[] callDurations, int size){
         String[] phoneNum = new String[size];
