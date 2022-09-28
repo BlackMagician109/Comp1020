@@ -4,10 +4,9 @@ public class Exercise0 {
       int[] callDurations = new int[phoneNumbers.length];
       int size = 0;
 
-      size = addCall(phoneNumbers, callDurations, size, "555-555-5555", 137);
-      size = addCall(phoneNumbers, callDurations, size, "555-555-5555", 12);
-      size = addCall(phoneNumbers, callDurations, size, "555-555-1234", 26);
-      size = addCall(phoneNumbers, callDurations, size, "555-555-9876", 382);
+      size = addCall(phoneNumbers, callDurations, size, "555-555-1234", 10);
+      size = addCall(phoneNumbers, callDurations, size, "555-555-4321", 20);
+      size = addCall(phoneNumbers, callDurations, size, "555-555-1234", 30);
 
       System.out.println("Phone numbers (initially):");
       printList(phoneNumbers, callDurations, size);
