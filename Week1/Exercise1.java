@@ -9,18 +9,14 @@ public class Exercise1 {
 
       printInventory(inventory);
 
-      sell(inventory[0], 90);
+      sell(inventory[0], 100);
       sell(inventory[1], 750);
       sell(inventory[2], 600);
       sell(inventory[3], 2500);
 
       printInventory(inventory);
 
-      order(inventory[0], 90);
-      order(inventory[1], 1);
-      order(inventory[2], 220);
-      order(inventory[3], 50);
-      order(inventory[3], -50);
+      checkInventory(inventory);
 
       printInventory(inventory);
 
