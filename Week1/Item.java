@@ -1,3 +1,15 @@
+/**
+* Name of class or program (matches filename) Item.java
+*
+* COMP 1020 SECTION D01
+* INSTRUCTOR Reyhaneh Ababzadeh
+* ASSIGNMENT Exercise1
+* @author Shivam Sharama, 7885183
+* @version 04-10-2022
+*
+* PURPOSE: what is the purpose of your program?
+*/
+
 class Item {
     //Instance Variables
     private String name;
