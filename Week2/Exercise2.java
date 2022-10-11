@@ -3,8 +3,9 @@ import java.io.*;
 public class Exercise2 {
    public static void main(String[] args) {
       BufferedReader input;
-      String title, ratingText;
+      String title, ratingText, outOfText;
       double rating = 0.0;
+      double outOf = 0.0;
 
       Review[] movies = new Review[100];
       int size = 0;
@@ -16,10 +17,12 @@ public class Exercise2 {
          title = input.readLine();
          while (title != null) {
             ratingText = input.readLine();
-
+            outOfText = input.readLine();
             try {
 
                rating = Double.parseDouble(ratingText);
+               outOf = Double.parseDouble(outOfText);
+               rating = (rating/outOf)*10;
 
                // if the conversion failed and the code below was not in the
                // "try" block, the rating variable would contain the rating of

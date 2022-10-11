@@ -1,0 +1,12 @@
+Casablanca
+8.7
+10.0
+Toy Story
+8.1
+10.0
+Star Wars Episode IV
+88.0
+100.0
+Toy Story
+4.0
+5.0
