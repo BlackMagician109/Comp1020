@@ -7,7 +7,9 @@
 * @author Shivam Sharma, 7885183
 * @version 11-10-2022
 *
-* PURPOSE: what is the purpose of your program?
+* PURPOSE: Made some changes to way the input file is read
+*          and made so that all the ratings of different 
+*          scales can be combined together.
 */
 
 try {
