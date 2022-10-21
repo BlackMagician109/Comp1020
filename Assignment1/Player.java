@@ -1,3 +1,15 @@
+/**
+* Class Player
+*
+* COMP 1020 SECTION D01
+* INSTRUCTOR Reyhaneh Ababzadeh
+* ASSIGNMENT Assignment 1
+* @author Shivam Sharma, 7885183
+* @version 20-10-2022
+*
+* PURPOSE: This is a class for player object that stores the player's name, number of games
+*          played, and the average score of the player.
+*/
 public class Player{
 
     //Instance Variables
