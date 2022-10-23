@@ -49,7 +49,7 @@ public class Game {
         String toPrint = "";
         toPrint += "Team rosters:\n";
         for(int i=0 ; i<teamOne.getRoster().length ; i++){
-            toPrint += teamOne.getRoster()[i].getName() + "\t" + teamTwo.getRoster()[i].getName() + "\n";
+            toPrint += teamOne.getRoster()[i].getName() + "\t\t" + teamTwo.getRoster()[i].getName() + "\n";
         }
         return toPrint;
     }
