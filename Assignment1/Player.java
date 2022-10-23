@@ -16,12 +16,20 @@ public class Player{
     private String name;    //User's Name
     private int gamesPlayed;//Number of games user has played
     private double avgScore;//Average score of the player
+    private Location member;//Location where the player is member at
 
     //Constructor
     public Player(String name){
         this.name = name;
         this.gamesPlayed = 0;
         this.avgScore = 0;
+    }
+
+    public Player(String name, Location place){
+        this.name = name;
+        this.gamesPlayed = 0;
+        this.avgScore = 0;
+        this.member = place;
     }
 
     //Instance Methods
