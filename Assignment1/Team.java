@@ -109,8 +109,11 @@ public class Team {
      */
     public boolean removePlayer(Player toRemove){
         for(int i=0; i<teamPlayers.length ; i++){
-            if(teamPlayers[i] == toRemove){
-                teamPlayers[i] = null;
+            if(teamPlayers[i]!=null && teamPlayers[i] == toRemove){
+                for(int j=i+1 ; j<teamPlayers.length ; j++){
+                    teamPlayers[j-1] = teamPlayers[j];
+                }
+                i--;
                 actualPlayers--;
                 return true;
             }
