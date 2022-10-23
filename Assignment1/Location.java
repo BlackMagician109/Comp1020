@@ -12,6 +12,7 @@
 public class Location {
     //Constant Variables
     final int maxMembers = 60;
+    
     //Instance Variables
     private Game game;  //The game to be played.
     private Player[] members;  //Member of the location.
