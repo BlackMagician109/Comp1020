@@ -35,7 +35,7 @@ public class Game {
         for(int i=0; i<winner.getRoster().length ; i++){
             winner.getRoster()[i].addGameResult(pointsPerMember(winner, points));
         }
-        if(winner.equals(teamOne)){
+        if(winner.equals(teamTwo)){
             //Do nothing
         }
         else{
