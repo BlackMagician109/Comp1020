@@ -31,6 +31,13 @@ public class Game {
         return !(teamOne.hasCommonPlayers(teamTwo))&&teamOne.teamFull()&&teamTwo.teamFull();
     }
 
+    /*This method gives points to the team members of the winning team.
+     * Losing team members are given 0 points.
+     * 
+     * Input: Team winner, int points
+     * 
+     * Output: none
+     */
     public void awardWinner(Team winner, int points){
         for(int i=0; i<winner.getRoster().length ; i++){
             winner.getRoster()[i].addGameResult(pointsPerMember(winner, points));
@@ -45,6 +52,12 @@ public class Game {
         }
     }
 
+    /*This is the toString method to print the output of Game object.
+     * 
+     * Input: none
+     * 
+     * Output: String
+     */
     public String toString(){
         String toPrint = "";
         toPrint += "Team rosters:\n";
@@ -53,7 +66,14 @@ public class Game {
         }
         return toPrint;
     }
+
     //Helper Methods
+    /*Helper method to calculate points given to each member of the winning team
+     * 
+     * Input: Team winner, int points
+     * 
+     * Output: int(Points to be recieved by each member of the winning team.)
+     */
     private int pointsPerMember(Team winner, int points){
         return points/winner.getRoster().length;
     }
