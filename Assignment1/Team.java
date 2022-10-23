@@ -34,7 +34,7 @@ public class Team {
         }
         else{
             for(; i<actualPlayers ; i++){
-                if(newOne.getName() == teamPlayers[i].getName()){
+                if(teamPlayers[i].equals(newOne)){
                     return false;
                 }
             }
