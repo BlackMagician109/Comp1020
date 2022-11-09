@@ -1,13 +1,13 @@
 
 public class Activity6C {
 	public static void main(String[] args) {
-		Student[] students = new Student[4];
+		Student[] students = new Student[5];
 
 		students[0] = new UndergradStudent(8032, "Casper", 2.78, 2);
 		students[1] = new GraduateStudent(3044, "Sheena", 3.92, "Natural Language Processing");
 		students[2] = new UndergradStudent(6170, "Yolanda", 4.26, 3);
 		students[3] = new GraduateStudent(1755, "Geordi", 3.58, "Human-Computer Interaction");
-
+		students[4] = new VisitingStudent(5641, "Harry", 4.5, "U of Manitoba");
 		printStudents(students);
 		printDeansList(students);
 
@@ -42,16 +42,21 @@ class Student {
 		this.gpa = gpa;
 	}
 
-	public double getGPA() {
-		return gpa;
-	}
-
 	public boolean deansHonourList() {
-		return false;
+		if(gpa >= honourGpa()){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 
 	public String toString() {
 		return number + " " + name + " (" + gpa + ")";
+	}
+
+	public double honourGpa(){
+		return 0.0;
 	}
 }
 
@@ -63,11 +68,8 @@ class UndergradStudent extends Student {
 		this.year = year;
 	}
 
-	public boolean deansHonourList() {
-		boolean result = false;
-		if (getGPA() >= 3.5)
-			result = true;
-		return result;
+	public double honourGpa() {
+		return 3.5;
 	}
 
 	public String toString() {
@@ -83,14 +85,31 @@ class GraduateStudent extends Student {
 		this.thesis = thesis;
 	}
 
-	public boolean deansHonourList() {
-		boolean result = false;
-		if (getGPA() >= 3.75)
-			result = true;
-		return result;
+	public double honourGpa() {
+		return 3.75;
 	}
 
 	public String toString() {
 		return "Graduate: " + super.toString() + " thesis: " + thesis;
+	}
+}
+
+class VisitingStudent extends Student{
+	//Instancer Variables
+	String studentUni;
+
+	//Constructor
+	public VisitingStudent(int number, String name, double gpa, String studentUni){
+		super(number, name, gpa);
+		this.studentUni = studentUni;
+	}
+
+	//Instance Method
+	public boolean deansHonourList(){
+		return false;
+	}
+
+	public String toString(){
+		return "Visiting Student: " + super.toString() + " Visiting from: " + studentUni;
 	}
 }
