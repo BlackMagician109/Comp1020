@@ -21,7 +21,7 @@ public class Commercial extends Flight {
     public String toString(){
         String toReturn = "";
 
-        toReturn += "Commercial Flight [a number] has a payload of size of ";
+        toReturn += "Commercial Flight " + id + " has a payload of size of ";
         toReturn += super.payloadList.size();
 
         return toReturn;

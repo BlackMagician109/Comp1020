@@ -22,7 +22,7 @@ public class Industrial extends Flight {
     public String toString(){
         String toReturn = "";
 
-        toReturn += "Industrial Flight [a number] has a payload of size of ";
+        toReturn += "Industrial Flight " + id + " has a payload of size of ";
         toReturn += super.payloadList.size();
 
         return toReturn;
