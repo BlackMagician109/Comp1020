@@ -1,16 +1,17 @@
 public abstract class Payload extends Item {
-
+	//Instance Variables
+	private double wgt;
 	public Payload(double wgt) {
 		super();
+		this.wgt = wgt;
 	}
 
 	public double getWeight(){
-		// this will have to be updated!
-		return 0;
+		return wgt;
 	}
 	
-	public Payload() {
-		//Delete this constructor once Phase 5 is complete!
+	//The standard toString
+	public String toString(){
+		return "ID: " + id + ", Weight:\t" + this.wgt + " kg";
 	}
-	
 }
