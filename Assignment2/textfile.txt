@@ -1,4 +1,6 @@
-* This is a comment.
-* This is another comment.
-This is a mistake
-* This is a third comment.
+CREATE-FLIGHT C
+CREATE-FLIGHT C
+CREATE-FLIGHT I
+CREATE-FLIGHT K
+GET-FLIGHT 100000001
+GET-FLIGHT 200000001
