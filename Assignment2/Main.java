@@ -54,16 +54,8 @@ public class Main {
     //
     public static void parseCommand(String[] tokens, Airline air) throws InvalidInputException{
         
-        if(tokens[0] == "CREATE-FLIGHT"){
-            if(tokens[1] == "C"){
-                air.addFlight('C');
-            }
-            else if(tokens[1] == "I"){
-                air.addFlight('I');
-            }
-            else{
-                throw new InvalidInputException("Flight Creation Command Incorrect");
-            }
+        if(tokens[0].equals("CREATE-FLIGHT")){
+            air.addFlight(tokens[1].charAt(0));
         }
         else if(tokens[0] == "GET-FLIGHT"){
             Flight inFlight;
@@ -74,6 +66,58 @@ public class Main {
             else{
                 System.out.println(inFlight);
             }
+        }
+        else if(tokens[0].equals("CREATE-PAYLOAD")){
+            if(tokens.length == 6){
+                Payload newPayload = Payload.payloadFactory(tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]);
+                air.addPayload(newPayload);
+            }
+            else if(tokens.length == 5){
+                Payload newPayload = Payload.payloadFactory(tokens[1], tokens[2], tokens[3], tokens[4], null);
+                air.addPayload(newPayload);
+            }
+            else if(tokens.length == 3){
+                Payload newPayload = Payload.payloadFactory(tokens[1], tokens[2], null, null, null);
+                air.addPayload(newPayload);
+            }
+        }
+        else if(tokens[0].equals("GET-PAYLOAD")){
+            Flight inFlight;
+            inFlight = air.getFlight(Integer.parseInt(tokens[1]));
+            if(inFlight == null){
+                System.out.println("Payload " + tokens[1] + " does not exist");
+            }
+            else{
+                System.out.println(inFlight);
+            }
+        }
+        else if(tokens[0].equals("ASSIGN-PAYLOAD")){
+            Flight inFlight;
+            inFlight = air.getFlight(Integer.parseInt(tokens[1]));
+            Payload inPayload;
+            inPayload = air.getPayload(Integer.parseInt(tokens[2]));
+            if((inFlight == null) || (inPayload == null)){
+                throw new InvalidInputException("Invalid Flight or Payload");
+            }
+            try{
+                inFlight.book(inPayload);
+            }
+            catch(InvalidBookingException ibe){
+                System.out.println(ibe.getMessage());
+            }
+        }
+        else if(tokens[0].equals("TAKEOFF")){
+            Flight flight;
+            flight = air.getFlight(Integer.parseInt(tokens[1]));
+            if(flight == null){
+                throw new InvalidInputException("FlightId does not exist");
+            }
+            else{
+                System.out.println(flight.doTakeoff());
+            }
+        }
+        else{
+            throw new InvalidInputException("Command not found");
         }
     }
 

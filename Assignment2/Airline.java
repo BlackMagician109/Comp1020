@@ -32,4 +32,19 @@ public class Airline {
         }
         return null;
     }
+
+    //
+    public void addPayload(Payload thePayload){
+        payloads.add(thePayload);
+    }
+
+    //
+    public Payload getPayload(int id){
+        for(int i=0 ; i<payloads.size() ; i++){
+            if(payloads.get(i).id == id){
+                return payloads.get(i);
+            }    
+        }
+        return null;
+    }
 }
