@@ -1,4 +1,11 @@
 public class Commercial extends Flight {
+    //Constructor
+    public Commercial(){
+        super();
+        id += 100000000;
+        id += totalItems;
+    }
+    
     //Instance Method
     public void book(Payload payload) throws InvalidBookingException{
         

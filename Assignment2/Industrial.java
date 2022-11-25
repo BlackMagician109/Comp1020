@@ -1,4 +1,11 @@
 public class Industrial extends Flight {
+    //Consturctor
+    public Industrial(){
+        super();
+        id += 200000000;
+        id += totalItems;
+    }
+
     //Instance Method
     public void book(Payload payload) throws InvalidBookingException{
         

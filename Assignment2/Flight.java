@@ -1,6 +1,11 @@
-import java.util.ArrayList;;
+import java.util.ArrayList;
 
-public abstract class Flight{
+public abstract class Flight extends Item{
+    //Constructor
+    public Flight(){
+        super();
+    }
+
     //Constants
     static final int MAX_WEIGHT = 200;
     static final int MAX_PLAYLOAD = 100;
