@@ -4,6 +4,7 @@ public class Industrial extends Flight {
         super();
         id += 200000000;
         id += totalItems;
+        totalItems++;
     }
 
     //Instance Method

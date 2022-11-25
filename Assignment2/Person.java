@@ -5,5 +5,6 @@ public class Person extends Payload {
 		super();
 		id += 300000000;
 		id += totalItems;
+		totalItems++;
 	}
 }

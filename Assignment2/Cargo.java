@@ -4,6 +4,7 @@ public class Cargo extends Payload {
 		super();
 		id += 400000000;
 		id += totalItems;
+		totalItems++;
 	}
 
 }

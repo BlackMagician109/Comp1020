@@ -4,6 +4,7 @@ public class Commercial extends Flight {
         super();
         id += 100000000;
         id += totalItems;
+        totalItems++;
     }
     
     //Instance Method
