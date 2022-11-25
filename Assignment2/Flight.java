@@ -1,6 +1,6 @@
 import java.util.ArrayList;;
 
-abstract class Flight{
+public abstract class Flight{
     //Constants
     static final int MAX_WEIGHT = 200;
     static final int MAX_PLAYLOAD = 100;
