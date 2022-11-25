@@ -9,17 +9,13 @@ public abstract class Flight{
     ArrayList<Payload> payloadList = new ArrayList<Payload>(MAX_PLAYLOAD);
 
     //Instance Methods
-    public void book(Payload payload){
-        try{
-            if((payload.getWeight() <= MAX_WEIGHT) && (payloadList.size() < MAX_PLAYLOAD)){
-                payloadList.add(payload);
-            }
-            else{
-                throw new InvalidBookingException("Unable to add payload.");
-            }
+    public void book(Payload payload) throws InvalidBookingException{
+        
+        if((payload.getWeight() <= MAX_WEIGHT) && (payloadList.size() < MAX_PLAYLOAD)){
+            payloadList.add(payload);
         }
-        catch(InvalidBookingException ibe){
-            System.out.println(ibe.getMessage());
+        else{
+            throw new InvalidBookingException("Unable to add payload.");
         }
     }
 
