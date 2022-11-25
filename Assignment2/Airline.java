@@ -6,18 +6,21 @@ public class Airline {
 	
     //Instance Metods
     public String addFlight(char type) throws InvalidInputException{
+        String toReturn = "";
         if(type == 'C'){
             Flight comFlight = new Commercial();
             flights.add(comFlight);
+            toReturn = comFlight.toString();
         }
         else if(type == 'I'){
             Flight indFlight = new Industrial();
             flights.add(indFlight);
+            toReturn = indFlight.toString();
         }
         else{
             throw new InvalidInputException("Flight Creation Command Incorrect");
         }
-        return "";
+        return toReturn;
     }
 
     //Returns flights with id number
