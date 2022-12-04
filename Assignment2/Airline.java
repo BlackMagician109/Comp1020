@@ -7,12 +7,12 @@ public class Airline {
     //Instance Metods
     public String addFlight(char type) throws InvalidInputException{
         String toReturn = "";
-        if(type == 'C'){
+        if(type == "C".charAt(0)){
             Flight comFlight = new Commercial();
             flights.add(comFlight);
             toReturn = comFlight.toString();
         }
-        else if(type == 'I'){
+        else if(type == "I".charAt(0)){
             Flight indFlight = new Industrial();
             flights.add(indFlight);
             toReturn = indFlight.toString();
