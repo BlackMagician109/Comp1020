@@ -65,10 +65,12 @@ class Patient {
 class PatientList {
 	private PatientNode head;
 	private int lastArrival;
+	private int size;
 
 	public PatientList() {
 		head = null;
 		lastArrival = 0;
+		this.size = 0;
 	}
 	
 	public void add(String name, int severity) {
@@ -78,6 +80,7 @@ class PatientList {
 		patient = new Patient(name, lastArrival, severity);
 
 		head = new PatientNode(patient, head);
+		size++;
 	}
 	
 	public Patient nextAdmission() {
@@ -108,7 +111,7 @@ class PatientList {
 			} else {
 				toAdmitPrevious.next = toAdmitCurrent.next;
 			}
-			
+			size--;
 			return toAdmitCurrent.data;
 		} else {
 			return null;
@@ -117,17 +120,21 @@ class PatientList {
 	
 	public void print() {
 		PatientNode current;
-		int size = 0;
+		//int size = 0;
 		
 		current = head;
 		while (current != null) {
 			System.out.println(current.data);
-			size++;
+			//size++;
 			current = current.next;
 		}
 		
-		System.out.println("Size = " + size);
+		System.out.println("Size = " + size());
 		System.out.println("Last arrival = " + lastArrival);
+	}
+
+	public int size(){
+		return this.size;
 	}
 	
 	public PatientList clone() {
@@ -152,7 +159,7 @@ class PatientList {
 			current = current.next;
 		}
 		copy.lastArrival = lastArrival;
-		
+		copy.size = this.size;
 		return copy;
 	}
 }
